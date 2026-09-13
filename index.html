@@ -1,114 +1,674 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vikram Hostel | Jaipur</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Vikram Hostel | Jaipur</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, sans-serif;
+    background:#f4f7fb;
+    color:#222;
+    line-height:1.6;
+}
+
+/* HERO */
+
+.hero{
+    min-height:650px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:40px 20px;
+    color:white;
+    background:
+    linear-gradient(rgba(10,35,90,.78),rgba(20,80,180,.78)),
+    url("https://images.unsplash.com/photo-1560185008-b033106af5c3?auto=format&fit=crop&w=1600&q=85");
+    background-size:cover;
+    background-position:center;
+}
+
+.hero-content{
+    max-width:850px;
+}
+
+.badge{
+    display:inline-block;
+    background:rgba(255,255,255,.18);
+    padding:8px 18px;
+    border-radius:30px;
+    margin-bottom:20px;
+    font-size:15px;
+}
+
+.hero h1{
+    font-size:58px;
+    margin-bottom:15px;
+}
+
+.hero p{
+    font-size:22px;
+    margin-bottom:30px;
+}
+
+.buttons{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    display:inline-block;
+    padding:14px 28px;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:bold;
+    background:white;
+    color:#1456c0;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+}
+
+.btn.primary{
+    background:#0b63e5;
+    color:white;
+}
+
+/* NAVIGATION */
+
+nav{
+    position:sticky;
+    top:0;
+    z-index:100;
+    background:white;
+    box-shadow:0 2px 15px rgba(0,0,0,.1);
+}
+
+.nav-inner{
+    max-width:1100px;
+    margin:auto;
+    padding:15px 20px;
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    flex-wrap:wrap;
+}
+
+nav a{
+    text-decoration:none;
+    color:#174ea6;
+    font-weight:bold;
+}
+
+/* COMMON */
+
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:70px 20px;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.section-title h2{
+    font-size:36px;
+    color:#1456c0;
+}
+
+.section-title p{
+    color:#666;
+}
+
+/* ABOUT */
+
+.about{
+    background:white;
+    border-radius:25px;
+    padding:40px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+    text-align:center;
+}
+
+/* ROOMS */
+
+.rooms{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:25px;
+}
+
+.card{
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.card img{
+    width:100%;
+    height:240px;
+    object-fit:cover;
+}
+
+.card-content{
+    padding:25px;
+}
+
+.card h3{
+    color:#1456c0;
+    margin-bottom:10px;
+}
+
+.price{
+    font-size:24px;
+    font-weight:bold;
+    color:#111;
+    margin:15px 0;
+}
+
+/* FACILITIES */
+
+.facilities{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.facility{
+    background:white;
+    padding:30px 20px;
+    text-align:center;
+    border-radius:20px;
+    box-shadow:0 7px 20px rgba(0,0,0,.07);
+    font-size:18px;
+}
+
+.icon{
+    font-size:40px;
+    display:block;
+    margin-bottom:10px;
+}
+
+/* GALLERY */
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+}
+
+.gallery img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    border-radius:18px;
+    transition:.3s;
+}
+
+.gallery img:hover{
+    transform:scale(1.03);
+}
+
+/* LOCATION */
+
+.location-box{
+    background:white;
+    border-radius:25px;
+    padding:35px;
+    text-align:center;
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+}
+
+.map{
+    margin-top:25px;
+    width:100%;
+    height:300px;
+    border:0;
+    border-radius:20px;
+}
+
+/* CONTACT */
+
+.contact{
+    text-align:center;
+    background:linear-gradient(135deg,#1245a0,#1976ed);
+    color:white;
+    border-radius:25px;
+    padding:60px 20px;
+}
+
+.contact h2{
+    font-size:36px;
+    margin-bottom:15px;
+}
+
+.contact p{
+    margin-bottom:25px;
+}
+
+/* FOOTER */
+
+footer{
+    background:#071b3d;
+    color:white;
+    text-align:center;
+    padding:30px 15px;
+}
+
+footer p{
+    margin:5px;
+}
+
+/* MOBILE */
+
+@media(max-width:750px){
+
+    .hero{
+        min-height:600px;
+    }
+
+    .hero h1{
+        font-size:42px;
+    }
+
+    .hero p{
+        font-size:18px;
+    }
+
+    .rooms{
+        grid-template-columns:1fr;
+    }
+
+    .facilities{
+        grid-template-columns:1fr;
+    }
+
+    .gallery{
+        grid-template-columns:1fr;
+    }
+
+    .gallery img{
+        height:250px;
+    }
+
+    .nav-inner{
+        gap:15px;
+        font-size:14px;
+    }
+
+    .container{
+        padding:50px 15px;
+    }
+
+}
+
+</style>
 </head>
 
 <body>
 
-<header>
-    <h1>🏠 Vikram Hostel</h1>
-    <p>Comfortable & Affordable Student Living in Jaipur</p>
+<!-- HERO -->
 
-    <a href="tel:09799966838">📞 Call Now</a>
-    <a href="https://wa.me/919799966838">💬 WhatsApp</a>
-</header>
+<section class="hero">
 
-<main>
+<div class="hero-content">
 
-<section>
-    <h2>Welcome to Vikram Hostel 👋</h2>
-    <p>
-        A comfortable and student-friendly hostel in Jaipur, Rajasthan.
-        We provide a peaceful place for students to stay, study and enjoy
-        a comfortable living environment.
-    </p>
+<span class="badge">🏠 Student Hostel • Jaipur</span>
+
+<h1>Vikram Hostel</h1>
+
+<p>
+Comfortable • Safe • Affordable Student Living
+</p>
+
+<div class="buttons">
+
+<a class="btn primary"
+href="tel:YOUR_PHONE_NUMBER">
+📞 Call Now
+</a>
+
+<a class="btn"
+href="https://wa.me/YOUR_PHONE_NUMBER">
+💬 WhatsApp
+</a>
+
+</div>
+
+</div>
+
 </section>
 
-<section>
-    <h2>🛏️ Our Rooms</h2>
 
-    <div>
-        <img
-        src="https://images.unsplash.com/photo-1555854877-bab0e564b8d5?auto=format&fit=crop&w=900&q=80"
-        alt="Comfortable hostel room"
-        style="width:100%;max-width:700px;border-radius:15px;">
-    </div>
+<!-- NAVIGATION -->
 
-    <h3>Comfortable Student Rooms</h3>
+<nav>
 
-    <p>
-        Clean, comfortable and suitable rooms for students.
-        Contact us to know about room availability and pricing.
-    </p>
+<div class="nav-inner">
+
+<a href="#about">About</a>
+<a href="#rooms">Rooms</a>
+<a href="#facilities">Facilities</a>
+<a href="#gallery">Gallery</a>
+<a href="#location">Location</a>
+<a href="#contact">Contact</a>
+
+</div>
+
+</nav>
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>Welcome to Vikram Hostel 👋</h2>
+
+<p>Your comfortable student living space in Jaipur</p>
+
+</div>
+
+<div class="about">
+
+<p>
+Vikram Hostel provides a comfortable and
+student-friendly environment in Jaipur, Rajasthan.
+</p>
+
+<br>
+
+<p>
+A peaceful place where students can stay,
+study and enjoy a comfortable living experience.
+</p>
+
+</div>
+
+</div>
+
 </section>
 
-<section>
-    <h2>⭐ Our Facilities</h2>
 
-    <ul>
-        <li>🛏️ Comfortable Rooms</li>
-        <li>🚿 Bathroom Facility</li>
-        <li>📚 Study Friendly Environment</li>
-        <li>⚡ Electricity</li>
-        <li>📍 Convenient Location</li>
-        <li>🌐 Student-Friendly Environment</li>
-    </ul>
+<!-- ROOMS -->
+
+<section id="rooms">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>🛏️ Our Rooms</h2>
+
+<p>Comfortable rooms for students</p>
+
+</div>
+
+<div class="rooms">
+
+
+<div class="card">
+
+<img
+src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=900&q=85"
+alt="Comfortable hostel room">
+
+<div class="card-content">
+
+<h3>Comfortable Student Room</h3>
+
+<p>
+Clean and comfortable room suitable
+for student living and study.
+</p>
+
+<div class="price">
+₹ Contact for Price
+</div>
+
+<a class="btn primary"
+href="tel:YOUR_PHONE_NUMBER">
+Check Availability
+</a>
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<img
+src="https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=900&q=85"
+alt="Student bedroom">
+
+<div class="card-content">
+
+<h3>Peaceful Living Space</h3>
+
+<p>
+A peaceful environment designed
+for comfortable student living.
+</p>
+
+<div class="price">
+₹ Contact for Price
+</div>
+
+<a class="btn primary"
+href="https://wa.me/YOUR_PHONE_NUMBER">
+Ask on WhatsApp
+</a>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
 </section>
 
-<section>
-    <h2>💰 Room & Stay Information</h2>
 
-    <h3>Affordable Student Accommodation</h3>
+<!-- FACILITIES -->
 
-    <p>
-        Looking for a comfortable place to stay in Jaipur?
-        Vikram Hostel provides affordable accommodation for students.
-    </p>
+<section id="facilities">
 
-    <p>
-        📞 Call us for current room availability, rent and other details.
-    </p>
+<div class="container">
 
-    <a href="tel:09799966838">📞 Check Availability</a>
+<div class="section-title">
+
+<h2>⭐ Our Facilities</h2>
+
+<p>Everything students need for comfortable living</p>
+
+</div>
+
+<div class="facilities">
+
+<div class="facility">
+<span class="icon">🛏️</span>
+Comfortable Rooms
+</div>
+
+<div class="facility">
+<span class="icon">🚿</span>
+Bathroom Facility
+</div>
+
+<div class="facility">
+<span class="icon">📚</span>
+Study Friendly Environment
+</div>
+
+<div class="facility">
+<span class="icon">⚡</span>
+Electricity
+</div>
+
+<div class="facility">
+<span class="icon">📍</span>
+Convenient Location
+</div>
+
+<div class="facility">
+<span class="icon">🔒</span>
+Student Friendly Environment
+</div>
+
+</div>
+
+</div>
+
 </section>
 
-<section>
-    <h2>📍 Our Location</h2>
 
-    <p>
-        Nadi ka Phatak Benar Rd,<br>
-        Ganesh Nagar, Shankar Vihar Extension,<br>
-        Jamna Puri, Jaipur, Rajasthan 302039
-    </p>
+<!-- GALLERY -->
 
-    <a href="https://www.google.com/maps/search/?api=1&query=Nadi+ka+Phatak+Benar+Road+Jaipur+Rajasthan">
-        📍 Get Directions
-    </a>
+<section id="gallery">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>📸 Hostel Gallery</h2>
+
+<p>Take a look at our living spaces</p>
+
+</div>
+
+<div class="gallery">
+
+<img
+src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=900&q=85"
+alt="Hostel room">
+
+<img
+src="https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=900&q=85"
+alt="Student bedroom">
+
+<img
+src="https://images.unsplash.com/photo-1560185008-b033106af5c3?auto=format&fit=crop&w=900&q=85"
+alt="Comfortable room">
+
+</div>
+
+</div>
+
 </section>
 
-<section>
-    <h2>📞 Contact Us</h2>
 
-    <p>📱 09799966838</p>
+<!-- LOCATION -->
 
-    <a href="tel:09799966838">📞 Call Us</a>
+<section id="location">
 
-    <br><br>
+<div class="container">
 
-    <a href="https://wa.me/919799966838">
-        💬 Chat on WhatsApp
-    </a>
+<div class="section-title">
+
+<h2>📍 Our Location</h2>
+
+<p>Jaipur, Rajasthan</p>
+
+</div>
+
+<div class="location-box">
+
+<h3>Vikram Hostel</h3>
+
+<p>
+Nadi Ka Phatak, Benar Road, Jaipur, Rajasthan
+</p>
+
+<p>
+📍 Convenient location for students
+</p>
+
+</div>
+
+</div>
+
 </section>
 
-</main>
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+<div class="container">
+
+<div class="contact">
+
+<h2>Ready to Visit?</h2>
+
+<p>
+Contact us to check room availability,
+pricing and other details.
+</p>
+
+<div class="buttons">
+
+<a class="btn"
+href="tel:YOUR_PHONE_NUMBER">
+📞 Call Now
+</a>
+
+<a class="btn"
+href="https://wa.me/YOUR_PHONE_NUMBER">
+💬 WhatsApp Us
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
 
 <footer>
-    <p>© 2026 Vikram Hostel, Jaipur</p>
+
+<p>🏠 <strong>Vikram Hostel</strong></p>
+
+<p>Jaipur, Rajasthan</p>
+
+<p>© 2026 Vikram Hostel. All Rights Reserved.</p>
+
 </footer>
 
 </body>
-</html>
+</html/>
