@@ -600,24 +600,89 @@ href="tel:+919799966838">
 </div>
 
 <div class="room-gallery">
-  <div class="room-card">
-    <img src="your-image-url-1.jpg" alt="Normal Hotel Room Single Bed">
+  <div class="room-container">
+  <!-- बाईं तरफ की लकड़ी की अलमारी -->
+  <div class="wardrobe"></div>
+
+  <!-- बीच में सिंगल बेड -->
+  <div class="bed-area">
+    <div class="pillow"></div>
+    <div class="bed-sheet"></div>
   </div>
-  <div class="room-card">
-    <img src="your-image-url-2.jpg" alt="Simple Hotel Room Single Bed">
+
+  <!-- केंद्र में बड़ी खिड़की -->
+  <div class="window-area">
+    <div class="curtain left-curtain"></div>
+    <div class="window-frame"></div>
+    <div class="curtain right-curtain"></div>
   </div>
-  <div class="room-card">
-    <img src="your-image-url-3.jpg" alt="Minimalist Single Bed Room">
+
+  <!-- दाईं तरफ स्टडी डेस्क और चेयर -->
+  <div class="study-area">
+    <div class="wall-shelf"></div>
+    <div class="study-table"></div>
+    <div class="empty-chair"></div>
   </div>
-  <div class="room-card">
-    <img src="your-image-url-4.jpg" alt="Budget Hotel Room Single Bed">
   </div>
-  <div class="room-card">
-    <img src="your-image-url-5.jpg" alt="Clean Single Bed Hotel Room">
-  </div>
-  <div class="room-card">
-    <img src="your-image-url-6.jpg" alt="Standard Single Bed Room">
-  </div>
+    /* इस कमरे के लेआउट के लिए CSS कोड */
+
+.room-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  background-color: #f5f5f5; /* दीवार का हल्का रंग */
+  padding: 40px;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+/* बेड (Bed) की स्टाइल */
+.bed {
+  width: 40%;
+  height: 50%;
+  background-color: #d2b48c; /* लकड़ी का रंग */
+  border-radius: 8px 8px 0 0;
+  position: relative;
+  box-shadow: inset 0 20px 0 #ffffff; /* सफेद चादर/गद्दे का इफ़ेक्ट */
+}
+
+/* स्टडी टेबल और कुर्सी का एरिया */
+.study-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30%;
+}
+
+/* स्टडी डेस्क (Desk) */
+.desk {
+  width: 100%;
+  height: 120px;
+  background-color: #deb887; /* लाइट वुड फिनिश */
+  border: 4px solid #b0c4de; /* मेटल के पैर */
+  border-bottom: none;
+}
+
+/* कुर्सी (Chair) */
+.chair {
+  width: 50%;
+  height: 80px;
+  background-color: #cd853f; /* कुर्सी की लकड़ी */
+  border: 3px solid #708090; /* स्टील फ्रेम */
+  margin-top: -10px;
+}
+
+/* अलमारी (Wardrobe) का किनारा */
+.wardrobe-edge {
+  position: absolute;
+  right: 0;
+  top: 10%;
+  width: 15%;
+  height: 80%;
+  background-color: #de9b52; /* अलमारी का रंग */
+  border-left: 2px solid #a0522d;
+}
+    
 </div>
     
 
